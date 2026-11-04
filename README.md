@@ -66,4 +66,4 @@ Dual-licensed under either
 - [MIT license](LICENSE-MIT), or
 - Apache License 2.0 (`LICENSE-APACHE`, to be added with the canonical text)
 
-at your option. Copyright (c) 2026 Neal Davis (edit the holder line to taste).
+at your option. Copyright (c) 2026 Sigilante/N. E. Davis.
