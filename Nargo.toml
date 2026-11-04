@@ -1,0 +1,10 @@
+[package]
+name = "sparse_merkle_tree"
+type = "lib"
+authors = ["Neal Davis"]
+
+[dependencies]
+# iden3/circomlib-compatible Poseidon over BN254. v0.2.6 is the tag that
+# compiles on nargo 1.0.0-beta.19 (v0.1.0 uses pre-u32-index syntax; v0.3.0+
+# call the 1-arg poseidon2_permutation). Track latest when the toolchain moves.
+poseidon = { tag = "v0.2.6", git = "https://github.com/noir-lang/poseidon" }
