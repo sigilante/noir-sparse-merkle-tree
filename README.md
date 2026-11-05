@@ -1,14 +1,16 @@
-# sparse_merkle_tree
+# `sparse_merkle_tree`
+
+**Status ~2026.11.5:  The code can be used but has not been vetted by a third party.**
 
 Sparse Merkle Tree **inclusion** and **non-membership** verification for
 [Noir](https://noir-lang.org), compatible with
-[iden3](https://github.com/iden3)/[circomlib](https://github.com/iden3/circomlib)'s
+[iden3](https://github.com/iden3)/[`circomlib`](https://github.com/iden3/circomlib)'s
 `SMTVerifier`.
 
-Roots built off-circuit by circomlib's toolchain (`circomlibjs`, `smt.js`,
-`newMemEmptyTrie`) verify here unchanged — the Poseidon hash is the
+Roots built off-circuit by `circomlib`'s toolchain (`circomlibjs`, `smt.js`,
+`newMemEmptyTrie`); the Poseidon hash is the
 [`noir-lang/poseidon`](https://github.com/noir-lang/poseidon) crate, which is
-bit-compatible with circomlib (verified against its published test vectors).
+bit-compatible with `circomlib` (verified against its published test vectors).
 
 ## Usage
 
@@ -34,7 +36,7 @@ proof is unsatisfiable. The witness fields (`siblings`, `old_key`, `old_value`,
 
 ## Structure
 
-The crate mirrors circomlib's component decomposition, each independently
+The crate mirrors `circomlib`′s component decomposition, each independently
 tested so it can be audited in isolation:
 
 | module      | circomlib         | role                                    |
@@ -45,7 +47,7 @@ tested so it can be audited in isolation:
 | `level`     | SMTVerifierLevel  | per-level root contribution             |
 | `verifier`  | SMTVerifier       | composes the above + the two assertions |
 
-`verifier` also carries a differential test suite against circomlib vectors
+`verifier` also carries a differential test suite against `circomlib` vectors
 (inclusion, both non-membership cases, and rejection of forged proofs).
 
 ## Compatibility
@@ -61,9 +63,9 @@ independent Noir implementation written from the circuit's public
 specification, not a translation of circomlib's source (circomlib is GPLv3; an
 algorithm is not itself copyrightable, and none of its source text is copied).
 
-Dual-licensed under either
+Dual-licensed for use and distribution under either of
 
 - [MIT license](LICENSE-MIT), or
-- Apache License 2.0 (`LICENSE-APACHE`, to be added with the canonical text)
+- [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
-at your option. Copyright (c) 2026 Sigilante/N. E. Davis.
+at your option. Copyright (c) 2026 Sigilante/N. E. Davis for ZeroAttest.
